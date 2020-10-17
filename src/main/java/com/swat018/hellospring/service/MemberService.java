@@ -2,14 +2,20 @@ package com.swat018.hellospring.service;
 
 import com.swat018.hellospring.domain.Member;
 import com.swat018.hellospring.repository.MemberRepository;
-import com.swat018.hellospring.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author jinwoopark
+ */
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /**
      * 회원 가입
@@ -17,7 +23,7 @@ public class MemberService {
      * @return
      */
     public Long join(Member member) {
-        // 같은 이름이 있는 중복 회원X
+        // 같은 이름이 있는 중복 회원X (중복 회원 검증)
         validateDuplicateMember(member);
         memberRepository.save(member);
         return member.getId();
