@@ -2,6 +2,8 @@ package com.swat018.hellospring.service;
 
 import com.swat018.hellospring.domain.Member;
 import com.swat018.hellospring.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,10 +11,12 @@ import java.util.Optional;
 /**
  * @author jinwoopark
  */
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
