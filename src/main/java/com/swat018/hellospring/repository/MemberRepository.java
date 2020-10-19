@@ -9,7 +9,7 @@ import java.util.Optional;
 /**
  * @author jinwoopark
  */
-@Repository
+//@Repository
 public interface MemberRepository {
     Member save(Member member);
     Optional<Member> findById(Long id);

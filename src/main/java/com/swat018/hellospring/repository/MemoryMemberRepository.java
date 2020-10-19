@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * @author jinwoopark
  */
-@Repository
+//@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
