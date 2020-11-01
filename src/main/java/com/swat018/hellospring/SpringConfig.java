@@ -1,5 +1,6 @@
 package com.swat018.hellospring;
 
+import com.swat018.hellospring.aop.TimeTraceAop;
 import com.swat018.hellospring.repository.*;
 import com.swat018.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +24,6 @@ public class SpringConfig {
         this.em = em;
     }*/
 
-/*    private DataSource dataSource;
-
-    @Autowired
-    public SpringConfig(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }*/
-
     private final MemberRepository memberRepository;
 
     @Autowired
@@ -43,6 +37,11 @@ public class SpringConfig {
     }
 
 /*    @Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }*/
+
+/*    @Bean
     public MemberRepository memberRepository() {
  //       return new MemoryMemberRepository();
  //       return new JdbcMemberRepository(dataSource);
@@ -50,4 +49,5 @@ public class SpringConfig {
  //       return new JpaMemberRepository(em);
 
     }*/
+
 }
